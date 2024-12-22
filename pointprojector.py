@@ -9,6 +9,7 @@ from bs4 import BeautifulSoup
 from player_statistics import grab_player_stats
 from grab_team_schedule import grab_team_sch
 from grab_opp_def import grab_opp
+from grab_b2b import grab_last_game
 
 
 # Ask for player name, then outsource all stat grabs to dif files (this is the only reason this file eists)
@@ -28,4 +29,5 @@ player_id = player['id']
 # call funcs
 grab_team_sch(player_id=player_id)
 grab_opp(player_id=player_id)
+grab_last_game(player_id=player_id)
 
