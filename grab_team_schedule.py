@@ -11,9 +11,9 @@ def grab_team_sch(player_id):
     global next_game
     career_stats = playercareerstats.PlayerCareerStats(player_id=player_id)
     df2 = career_stats.get_data_frames()[0]
-    latest_team = df2.iloc[-1]["TEAM_ABBREVIATION"]
 
     # URL for Lakers' 2024-25 schedule
+    global team_abbreviation
     team_abbreviation = df2.iloc[-1]["TEAM_ABBREVIATION"]
     season_year = 2025
     schedule_url = f"https://www.basketball-reference.com/teams/{team_abbreviation}/{season_year}_games.html"
@@ -58,7 +58,7 @@ def grab_team_sch(player_id):
             global next_game_date
             next_game_date = next_game['Date'].strftime('%Y-%m-%d')
             print(f"Date: {next_game['Date'].strftime('%Y-%m-%d')}")
-            print(f"Opponent: {next_game['Opponent']}")
+            print(f"Opponent: {next_game['Opponent']}")  
         else:
             print(f"No upcoming games found for {team_abbreviation}.")
     else:

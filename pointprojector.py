@@ -36,10 +36,16 @@ date1 = datetime.strptime(last_game_date, "%Y-%m-%d")
 date2 = datetime.strptime(next_game_date, "%Y-%m-%d")
 
 date_diff = abs(date2 - date1)
-print(date_diff)
 if date_diff == timedelta(days=1):
-    b2b = True
+    print(date_diff)
     print("BACK TO BACK IS TRUE")
+    b2b = True
 else:
-    b2b = False
+    print(date_diff)
     print("BACK TO BACK IS FALSE")
+    b2b = False
+from grab_team_schedule import team_abbreviation
+
+from home_or_away import get_loc
+get_loc(team_abbreviation=team_abbreviation)
+
