@@ -37,11 +37,11 @@ date2 = datetime.strptime(next_game_date, "%Y-%m-%d")
 # math to check if games are back to back
 date_diff = abs(date2 - date1)
 if date_diff == timedelta(days=1):
-    print(date_diff)
+    print(f'date diff is {date_diff}')
     b2b = True
     print(f'b2b is {b2b}' )
 else:
-    print(date_diff)
+    print(f'date diff is {date_diff}')
     b2b = False
     print(f'b2b is {b2b}')
 # grab team abbreviation so home_or_away function has needed vars

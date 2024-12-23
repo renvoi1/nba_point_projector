@@ -28,9 +28,9 @@ def grab_opp(player_id):
     if not team_def_rating.empty:
         global opp_def_rating
         opp_def_rating = team_def_rating.values[0]
-        print(opp_def_rating)
+        print(f'def rating is {opp_def_rating}')
 
     if not team_def_reb.empty:
         global opp_def_reb
         opp_def_reb = team_def_reb.values[0]
-        print(opp_def_reb)
+        print(f'dreb is {opp_def_reb}')

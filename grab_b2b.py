@@ -27,7 +27,7 @@ def grab_last_game(player_id):
     last_game = gamelog_df.sort_values("GAME_DATE", ascending=False).iloc[0]  # Get the most recent game
     global last_game_date
     last_game_date = last_game['GAME_DATE'].strftime('%Y-%m-%d')
-    print(last_game_date)
+    print(f'last played game is {last_game_date}')
 
     
 # may or may not remove this due to not recognizing b2b games unless one of said games is happening day of
