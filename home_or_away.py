@@ -50,6 +50,7 @@ def get_loc(team_abbreviation):
     next_game_info = get_next_game_location(team_abbreviation)
 
     if next_game_info != "No upcoming games found":
+        global location
         game_date, opponent, location = next_game_info
         print(f"{location}")
     else:

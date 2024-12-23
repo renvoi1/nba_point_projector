@@ -1,0 +1,40 @@
+[
+    {
+        "Player":[
+            "Victor Wembanyama"
+        ],
+        "PPG":[
+            24.6956521739
+        ],
+        "MPG":[
+            32.347826087
+        ],
+        "FGA":[
+            18.3913043478
+        ],
+        "NXTOPP":[
+            "New York Knicks"
+        ],
+        "NXTGM":[
+            "2024-12-25"
+        ],
+        "OPPDR":[
+            112.3
+        ],
+        "OPPDREB":[
+            0.717
+        ],
+        "LSTGM":[
+            "2024-12-21"
+        ],
+        "DATEDIFF":[
+            345600000
+        ],
+        "B2B":[
+            false
+        ],
+        "ISGMAWAY":[
+            true
+        ]
+    }
+]

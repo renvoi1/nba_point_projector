@@ -11,17 +11,18 @@ from grab_team_schedule import grab_team_sch
 from grab_opp_def import grab_opp
 from grab_b2b import grab_last_game
 
-
 # Ask for player name, then outsource all stat grabs to dif files (this is the only reason this file eists)
 all_teams = teams.get_teams()
 all_players = players.get_players()
 while True:
     try:
+        global guy2
         guy2 = input("Please input player (case sens): ")
         player = [player for player in all_players if player['full_name'] == guy2][0]
         break
     except IndexError:
         print('player does not exist/wrong case')
+        break
 grab_player_stats(guy=guy2)
 # need player id for team related stat grabs
 player = [player for player in all_players if player['full_name'] == guy2][0]
@@ -51,4 +52,37 @@ from home_or_away import get_loc
 get_loc(team_abbreviation=team_abbreviation)
 
 
+
+from player_statistics import ppg, mpg, fga
+from grab_team_schedule import next_game_date, next_opponent
+from grab_opp_def import opp_def_rating, opp_def_reb
+from grab_b2b import last_game_date
+from home_or_away import is_game_away
+master_data = {
+    "Player": [{guy2}],
+    "PPG": [{ppg}],
+    "MPG": [{mpg}],
+    "FGA": [{fga}],
+    "NXTOPP": [{next_opponent}],
+    "NXTGM": [{next_game_date}],
+    "OPPDR": [{opp_def_rating}],
+    "OPPDREB": [{opp_def_reb}],
+    "LSTGM": [{last_game_date}],
+    "DATEDIFF": [{date_diff}],
+    "B2B": [{b2b}],
+    "ISGMAWAY": [{is_game_away}],
+}
+
+df3 = pd.DataFrame(master_data)
+
+# Ensure DataFrame is not empty
+if df3.empty:
+    print("DataFrame is empty!")
+else:
+    # Save to JSON with error handling
+    try:
+        df3.to_json("player_stats.json", orient="records", indent=4)
+        print("Data saved to player_stats.json")
+    except ValueError as e:
+        print(f"ValueError occurred: {e}")
 
