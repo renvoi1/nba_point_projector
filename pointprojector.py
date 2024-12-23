@@ -3,7 +3,7 @@ import pandas as pd
 from nba_api.stats.endpoints import playergamelog, teamgamelog, leaguedashteamstats, playercareerstats
 from nba_api.stats.static import players, teams
 import requests
-from datetime import datetime
+from datetime import datetime, timedelta
 from io import StringIO
 from bs4 import BeautifulSoup
 from player_statistics import grab_player_stats
@@ -30,4 +30,16 @@ player_id = player['id']
 grab_team_sch(player_id=player_id)
 grab_opp(player_id=player_id)
 grab_last_game(player_id=player_id)
+from grab_b2b import last_game_date
+from grab_team_schedule import next_game_date
+date1 = datetime.strptime(last_game_date, "%Y-%m-%d")
+date2 = datetime.strptime(next_game_date, "%Y-%m-%d")
 
+date_diff = abs(date2 - date1)
+print(date_diff)
+if date_diff == timedelta(days=1):
+    b2b = True
+    print("BACK TO BACK IS TRUE")
+else:
+    b2b = False
+    print("BACK TO BACK IS FALSE")

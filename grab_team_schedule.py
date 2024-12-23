@@ -55,7 +55,9 @@ def grab_team_sch(player_id):
         if not upcoming_games.empty:
             next_game = upcoming_games.iloc[0]
             print(f"Next game for {team_abbreviation}:")
-            print(f"Date: {next_game['Date'].strftime('%A, %B %d')}")
+            global next_game_date
+            next_game_date = next_game['Date'].strftime('%Y-%m-%d')
+            print(f"Date: {next_game['Date'].strftime('%Y-%m-%d')}")
             print(f"Opponent: {next_game['Opponent']}")
         else:
             print(f"No upcoming games found for {team_abbreviation}.")

@@ -25,9 +25,11 @@ def grab_last_game(player_id):
     # Step 3: Sort by Game Date to Get the Most Recent Game
     gamelog_df["GAME_DATE"] = pd.to_datetime(gamelog_df["GAME_DATE"], format='%b %d, %Y')  # Convert to datetime
     last_game = gamelog_df.sort_values("GAME_DATE", ascending=False).iloc[0]  # Get the most recent game
-
+    global last_game_date
+    last_game_date = last_game['GAME_DATE'].strftime('%Y-%m-%d')
+    print(last_game_date)
+    
+    
     # Step 4: Display Last Game Details
-    print(f"Last game played by {team_name}:")
-    print(f"Date: {last_game['GAME_DATE'].date()}")
 
     
