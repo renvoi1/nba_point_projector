@@ -23,14 +23,14 @@ def grab_opp(player_id):
     opp = next_game['Opponent']
     team_def_rating = stats_df.loc[stats_df["TEAM_NAME"] == (opp), "DEF_RATING"]
     team_def_reb = stats_df.loc[stats_df["TEAM_NAME"] == (opp), "DREB_PCT"]
-    def_rating = team_def_rating.values[0]
-    def_reb = team_def_reb.values[0]
 
 
     if not team_def_rating.empty:
-        print(f"Defensive Rating for {opp} in {season}: {team_def_rating.values[0]}")
-    else:
-        print(f"{opp} stats not found for {season}.")
+        global opp_def_rating
+        opp_def_rating = team_def_rating.values[0]
+        print(opp_def_rating)
 
     if not team_def_reb.empty:
-        print(f"Defensive rebound for {opp} in {season}: {team_def_reb.values[0]}")
+        global opp_def_reb
+        opp_def_reb = team_def_reb.values[0]
+        print(opp_def_reb)

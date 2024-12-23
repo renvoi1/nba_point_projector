@@ -30,3 +30,4 @@ def grab_last_game(player_id):
     print(last_game_date)
 
     
+# may or may not remove this due to not recognizing b2b games unless one of said games is happening day of

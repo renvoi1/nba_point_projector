@@ -17,6 +17,7 @@ def grab_player_stats(guy):
     gamelog = playergamelog.PlayerGameLog(player_id=player_id, season=season)
     df = gamelog.get_data_frames()[0]
     # set data to var for easy access later on
+    global ppg, mpg, fga
     ppg = df['PTS'].mean()
     mpg = df['MIN'].mean()
     fga = df['FGA'].mean()

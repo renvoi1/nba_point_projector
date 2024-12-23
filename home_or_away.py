@@ -31,8 +31,11 @@ def get_loc(team_abbreviation):
                 # Debugging: Print the exact content of game_location to check for issues
 
                 if '@' in game_location:  # Away game: opponent's location
+                    global is_game_away
+                    is_game_away = True
                     game_location = 'AWAY GAME'
                 elif game_location == "":  # Empty field: Home game
+                    is_game_away = False
                     game_location = "HOME GAME"
                 
                 # Convert the date to a datetime object and check if it's in the future
