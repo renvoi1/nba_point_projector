@@ -6,6 +6,7 @@ from datetime import datetime
 from io import StringIO
 from bs4 import BeautifulSoup
 
+# define func
 def grab_opp(player_id):
     season = '2024-25'
     team_stats = leaguedashteamstats.LeagueDashTeamStats(season=season, measure_type_detailed_defense="Advanced")
@@ -17,7 +18,7 @@ def grab_opp(player_id):
 
     stats_df = team_stats.get_data_frames()[0]
 
-    # Optional: Filter for a specific team
+    # Optional: Filter for a specified team
     from grab_team_schedule import next_game
     opp = next_game['Opponent']
     team_def_rating = stats_df.loc[stats_df["TEAM_NAME"] == (opp), "DEF_RATING"]

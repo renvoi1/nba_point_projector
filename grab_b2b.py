@@ -6,7 +6,7 @@ from datetime import datetime
 from io import StringIO
 from bs4 import BeautifulSoup
 
-# Step 1: Find the Team ID
+# Step 1: Grab the Team ID
 def grab_last_game(player_id):
     nba_teams = teams.get_teams()
     player_info = commonplayerinfo.CommonPlayerInfo(player_id=player_id)
@@ -16,7 +16,7 @@ def grab_last_game(player_id):
     team_id = team_info["id"]
 
     # Step 2: Fetch the Team's Game Log for the Current Season
-    season = "2024-25"  # Update to the desired season
+    season = "2024-25" 
     gamelog = teamgamelog.TeamGameLog(team_id=team_id, season=season)
     gamelog_df = gamelog.get_data_frames()[0]
 
@@ -28,9 +28,5 @@ def grab_last_game(player_id):
     global last_game_date
     last_game_date = last_game['GAME_DATE'].strftime('%Y-%m-%d')
     print(last_game_date)
-    
-    
-    
-    # Step 4: Display Last Game Details
 
     

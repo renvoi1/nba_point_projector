@@ -6,13 +6,13 @@ from datetime import datetime
 from io import StringIO
 from bs4 import BeautifulSoup
 
-
+# define function
 def grab_team_sch(player_id):
     global next_game
     career_stats = playercareerstats.PlayerCareerStats(player_id=player_id)
     df2 = career_stats.get_data_frames()[0]
 
-    # URL for Lakers' 2024-25 schedule
+    # URL for specified team schedule
     global team_abbreviation
     team_abbreviation = df2.iloc[-1]["TEAM_ABBREVIATION"]
     season_year = 2025

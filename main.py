@@ -4,6 +4,8 @@ import pandas as pd
 
 
 
+# This program was proof of concept to see how nba_api functioned, this file is not important for the overall project.
+
 
 # get player details (name)
 all_players = players.get_players()

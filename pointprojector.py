@@ -34,7 +34,7 @@ from grab_b2b import last_game_date
 from grab_team_schedule import next_game_date
 date1 = datetime.strptime(last_game_date, "%Y-%m-%d")
 date2 = datetime.strptime(next_game_date, "%Y-%m-%d")
-
+# math to check if games are back to back
 date_diff = abs(date2 - date1)
 if date_diff == timedelta(days=1):
     print(date_diff)
@@ -44,8 +44,9 @@ else:
     print(date_diff)
     print("BACK TO BACK IS FALSE")
     b2b = False
+# grab team abbreviation so home_or_away function has needed vars
 from grab_team_schedule import team_abbreviation
-
+# function then run it
 from home_or_away import get_loc
 get_loc(team_abbreviation=team_abbreviation)
 

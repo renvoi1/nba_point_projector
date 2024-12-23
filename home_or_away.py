@@ -42,8 +42,8 @@ def get_loc(team_abbreviation):
                 if game_date > datetime.now():
                     return game_date, opponent, game_location
 
-    # Example: Get the next game for the Los Angeles Lakers
-    team_abbreviation = f'{team_abbreviation}'  # Change this to any team's abbreviation
+    # Example: Get the next game for specified team
+    team_abbreviation = f'{team_abbreviation}'
     next_game_info = get_next_game_location(team_abbreviation)
 
     if next_game_info != "No upcoming games found":
