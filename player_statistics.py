@@ -18,9 +18,12 @@ def grab_player_stats(guy):
     df = gamelog.get_data_frames()[0]
     # set data to var for easy access later on
     global ppg, mpg, fga
-    ppg = df['PTS'].mean()
-    mpg = df['MIN'].mean()
-    fga = df['FGA'].mean()
+    oppg = df['PTS'].mean()
+    ompg = df['MIN'].mean()
+    ofga = df['FGA'].mean()
+    ppg = round(oppg)
+    mpg = round(ompg)
+    fga = round(ofga)
     # print
     print(f'ppg = {ppg}')
     print(f'mpg = {mpg}')

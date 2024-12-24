@@ -1,39 +1,39 @@
 [
     {
         "Player":[
-            "Joel Embiid"
+            "LeBron James"
         ],
         "PPG":[
-            20.625
+            22
         ],
         "MPG":[
-            27.5
+            34
         ],
         "FGA":[
-            15.875
+            17
         ],
-        "NXTOPP":[
-            "Boston Celtics"
-        ],
-        "NXTGM":[
+        "NEXT GAME":[
             "2024-12-25"
         ],
-        "OPPDR":[
-            109.5
+        "NEXT OPP":[
+            "Golden State Warriors"
         ],
-        "OPPDREB":[
-            0.724
+        "OPP DEFRATING":[
+            109.6
         ],
-        "LSTGM":[
+        "OPP DREB":[
+            0.715
+        ],
+        "LAST GAME":[
             "2024-12-23"
         ],
-        "DATEDIFF":[
+        "DATE DIFF":[
             "2 days, 0:00:00"
         ],
         "B2B":[
             false
         ],
-        "ISGMAWAY":[
+        "IS GAME AWAY":[
             true
         ]
     }
