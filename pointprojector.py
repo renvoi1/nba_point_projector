@@ -58,6 +58,8 @@ from grab_team_schedule import next_game_date, next_opponent
 from grab_opp_def import opp_def_rating, opp_def_reb
 from grab_b2b import last_game_date
 from home_or_away import is_game_away
+
+str_date_diff = str(date_diff)
 master_data = {
     "Player": [{guy2}],
     "PPG": [{ppg}],
@@ -68,7 +70,7 @@ master_data = {
     "OPPDR": [{opp_def_rating}],
     "OPPDREB": [{opp_def_reb}],
     "LSTGM": [{last_game_date}],
-    "DATEDIFF": [{date_diff}],
+    "DATEDIFF": [{str_date_diff}],
     "B2B": [{b2b}],
     "ISGMAWAY": [{is_game_away}],
 }
@@ -85,4 +87,15 @@ else:
         print("Data saved to player_stats.json")
     except ValueError as e:
         print(f"ValueError occurred: {e}")
+
+import gui
+
+def service_func():
+    print('service func')
+
+if __name__ == '__main__':
+    # service.py executed as script
+    # do something
+    service_func()
+    gui.gui_func()
 
